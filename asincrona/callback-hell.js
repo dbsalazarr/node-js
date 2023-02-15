@@ -22,32 +22,45 @@ function adios(nombre, otroCallback){
     }, 1000)
 }
 
+let listaMensajes = ["¿Cómo estas?", "represento","un mensaje distinto", "en cada ejecución"]
+
 function conversacion(nombre, numeroVeces, callback){
 
     if(numeroVeces > 0){
-        hablar(() => {
+        hablar(listaMensajes[listaMensajes.length - numeroVeces], () => {
             conversacion(nombre, --numeroVeces, callback)
         })
     }else{
-        callback()
+        adios(nombre, callback)
     }
 
 }
 
+
+
 // EJECUCIÓN DE LAS FUNCIONES
+
+
+
 console.log("Start Process")
 
-hola("Bremdow", function(nombre){
-    hablar("Hoy es un día agradable", function(){
-        hablar("Si que lo es, pero ¿Por qué hablas solo?", function(){
-            hablar("Deja de respondermeeee", function(){
-                adios(nombre, function(){
-                    console.log("Terminando el proceso")
-                })
-            })
-        })
+hola('Bremdow', function(nombre){
+    conversacion(nombre, listaMensajes.length, function(){
+        console.log("Proceso terminado")
     })
 })
+
+// hola("Bremdow", function(nombre){
+//     hablar("Hoy es un día agradable", function(){
+//         hablar("Si que lo es, pero ¿Por qué hablas solo?", function(){
+//             hablar("Deja de respondermeeee", function(){
+//                 adios(nombre, function(){
+//                     console.log("Terminando el proceso")
+//                 })
+//             })
+//         })
+//     })
+// })
 
 // hola('Davis', ()=>{})
 // adios('Davis', ()=>{})
