@@ -11,8 +11,8 @@ function hablar(mensaje ){
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{    
             console.log("Estoy conversando con "+ mensaje)
-            //resolve(mensaje);
-            reject("Tienes tos y no puedes conversar, descansa sopenco :v ")
+            // resolve(mensaje);
+            reject("Tienes tos y no puedes conversar, repose en cama >:v ")
         }, 1000)
     })
 }
@@ -42,3 +42,24 @@ hola("Ter")
     .catch( error => {
         console.error("Problemas en la comunicación: " + error)
     })
+
+// OTRA FORMA DE EJECUCIÓN
+hola("Ernesto")
+    .then(hablar)
+    .then(hablar)
+    .then(hablar)
+    .then(adios)
+    .then(()=>{
+        console.log("Terminando el proceso")
+    })
+    .catch(error =>{
+        console.error("Problemas en la comunicación: " + error)
+    })
+
+// NORMALMENTE AL EJECUTAR SE TENIA
+
+// hola("Argumento nombre", () => {
+//     hablar("mensaje", function(){
+//         console.log("Finalizando")
+//     })
+// })
