@@ -11,7 +11,7 @@ let tabla = [
 console.error("Ideal para mostrar un error")
 console.warn("Mostrar una advertencia")
 // Mostrar información en formato de tabla
-// console.table(tabla);
+console.table(tabla);
 
 // AGRUPAR VARIOS MENSAJES
 console.log("Conversación")
