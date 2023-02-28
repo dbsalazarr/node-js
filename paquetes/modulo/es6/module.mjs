@@ -19,7 +19,6 @@ export default {
     prop2: "Tengo una gran capacidad lógica"
 }
 
-export const  {
+export const 
     name = 'D Robot',
     age = 18
-}
